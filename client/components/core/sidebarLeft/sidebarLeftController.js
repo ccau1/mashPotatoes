@@ -12,21 +12,21 @@ angular.module('mashPotatoes').controller('SidebarLeftController', ['$scope', '$
                     subtitle: '',
                     desc: '',
                     onClick: function() {
-                        $state.go('projects.create');
+                        $state.go('projectCreate');
                     }
                 },
                 {
                     title: 'Browse',
-                    subtitle: 'search for available projects',
-                    desc: '',
+                    subtitle: '',
+                    desc: 'Search for Available Projects',
                     onClick: function() {
-                        $state.go('projects.search');
+                        $state.go('projectSearch');
                     }
                 },
                 {
                     title: 'My Projects',
-                    subtitle: 'Currently Developing Projects',
-                    desc: '',
+                    subtitle: '',
+                    desc: 'Currently Developing Projects',
                     onClick: function() {
                         $state.go('projects');
                     }

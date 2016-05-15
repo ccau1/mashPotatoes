@@ -29,7 +29,7 @@ angular.module("mashPotatoes").config(['$stateProvider', '$urlRouterProvider', '
 
             })
         })
-        .state('projects.create', {
+        .state('projectCreate', {
             url: "/projects/create",
             views: {
                 'main': {
@@ -42,7 +42,7 @@ angular.module("mashPotatoes").config(['$stateProvider', '$urlRouterProvider', '
 
             })
         })
-        .state('projects.search', {
+        .state('projectSearch', {
             url: "/projects/search",
             views: {
                 'main': {
@@ -61,6 +61,19 @@ angular.module("mashPotatoes").config(['$stateProvider', '$urlRouterProvider', '
                 'main': {
                     templateUrl: "client/components/projects/projectsView.ng.html",
                     controller: "ProjectsController"
+                }
+            },
+            data: {pageTitle: 'My Projects'},
+            resolve: lodash.assign(baseResolve, {
+
+            })
+        })
+        .state('projectDetail', {
+            url: "/projects/:id",
+            views: {
+                'main': {
+                    templateUrl: "client/components/projects/projectDetailView.ng.html",
+                    controller: "ProjectDetailController"
                 }
             },
             data: {pageTitle: 'My Projects'},

@@ -1,0 +1,15 @@
+<md-content>
+    <div class="overview">
+        <h2 ng-bind="project.name"></h2>
+        <p ng-bind="project.desc"></p>
+        <md-badge>{{ project.isProfit ? 'Profit' : 'Non-Profit' }}</md-badge>
+        <h3>Owner</h3>
+        <user-badge ng-model="project.owner"></user-badge>
+        <h3>Participants</h3>
+        <span ng-repeat="participant in project.participants">
+            <user-badge ng-model="participant"></user-badge>
+        </span>
+        <h3>Expected Time Span</h3>
+        <span>{{project.expectedTimeSpan.length}} {{project.expectedTimeSpan.type}}</span>
+    </div>
+</md-content>
