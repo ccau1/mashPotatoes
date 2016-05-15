@@ -10,7 +10,7 @@ angular.module('mashPotatoes').controller('SidebarLeftController', ['$scope', '$
                 {
                     title: 'Create',
                     subtitle: '',
-                    desc: '',
+                    desc: 'Plan your own project now!',
                     onClick: function() {
                         $state.go('projectCreate');
                     }
@@ -18,7 +18,7 @@ angular.module('mashPotatoes').controller('SidebarLeftController', ['$scope', '$
                 {
                     title: 'Browse',
                     subtitle: '',
-                    desc: 'Search for Available Projects',
+                    desc: 'Search for available projects',
                     onClick: function() {
                         $state.go('projectSearch');
                     }
@@ -26,7 +26,7 @@ angular.module('mashPotatoes').controller('SidebarLeftController', ['$scope', '$
                 {
                     title: 'My Projects',
                     subtitle: '',
-                    desc: 'Currently Developing Projects',
+                    desc: 'Currently developing projects',
                     onClick: function() {
                         $state.go('projects');
                     }

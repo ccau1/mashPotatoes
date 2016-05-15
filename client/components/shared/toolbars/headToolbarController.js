@@ -6,7 +6,7 @@ angular.module('mashPotatoes').directive('headToolbar', ['$mdMedia', '$state', '
         },
         transclude: true,
         replace: true,
-        templateUrl: 'client/shared/toolbars/headToolbarView.ng.html',
+        templateUrl: 'client/components/shared/toolbars/headToolbarView.ng.html',
         controller: function ($scope) {
 
         },

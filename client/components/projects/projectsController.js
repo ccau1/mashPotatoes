@@ -1,4 +1,4 @@
-angular.module('mashPotatoes').controller('ProjectsController', ['$scope', '$reactive', function($scope, $reactive) {
+angular.module('mashPotatoes').controller('ProjectsController', ['$scope', '$reactive', '$state', function($scope, $reactive, $state) {
     $reactive(this).attach($scope);
 
     $scope.helpers({
@@ -6,4 +6,8 @@ angular.module('mashPotatoes').controller('ProjectsController', ['$scope', '$rea
             return Projects.find({ $or: [{ owner: Meteor.userId() }, { participants: Meteor.userId() }] });
         }
     });
+
+    $scope.displayCreate = function() {
+        $state.go('projectCreate');
+    }
 }]);

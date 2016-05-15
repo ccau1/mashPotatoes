@@ -1,12 +1,20 @@
-<!--<head-toolbar></head-toolbar>-->
-<md-list>
-    <md-subheader class="md-no-sticky">{{projects.length}} projects</md-subheader>
-    <md-list-item class="md-3-line" ng-repeat="project in projects">
-        <!--<img ng-src="{{item.face}}?{{$index}}" class="md-avatar" alt="{{item.who}}" />-->
-        <div class="md-list-item-text" layout="column">
-            <h3>{{ project.name }}</h3>
-            <h4>{{ project.desc }}</h4>
-            <!--<p>{{ item.notes }}</p>-->
-        </div>
-    </md-list-item>
-</md-list>
+<div layout="column">
+    <head-toolbar>
+        <md-button ng-click="displayCreate()" class="md-fab md-secondary half-hanging" aria-label="Create">
+            <md-icon md-svg-src="img/icons/ic_add_white_24px.svg"></md-icon>
+        </md-button>
+    </head-toolbar>
+    <md-content>
+        <md-list>
+            <md-subheader class="md-no-sticky">{{projects.length}} projects</md-subheader>
+            <md-list-item class="md-3-line" ng-repeat="project in projects">
+                <!--<img ng-src="{{item.face}}?{{$index}}" class="md-avatar" alt="{{item.who}}" />-->
+                <div class="md-list-item-text" layout="column">
+                    <h3>{{ project.name }}</h3>
+                    <h4>{{ project.desc }}</h4>
+                    <!--<p>{{ item.notes }}</p>-->
+                </div>
+            </md-list-item>
+        </md-list>
+    </md-content>
+</div>

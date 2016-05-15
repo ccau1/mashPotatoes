@@ -1,60 +1,62 @@
-<!--<head-toolbar md-scroll-shrink="false"></head-toolbar>-->
-<form name="projectCreate">
-    <md-input-container>
-        <label> Project Name </label>
-        <input type="text" name="name" ng-model="formFields.name" aria-label="project name" required/>
-        <div ng-messages="projectCreate.name.$error">
-            <div ng-message="required">This field is required.</div>
-        </div>
-    </md-input-container>
-    <md-input-container>
-        <label> Project Description </label>
-        <textarea name="desc" ng-model="formFields.desc" aria-label="project description" required></textarea>
-    </md-input-container>
-    <md-radio-group ng-model="formFields.isProfit" layout="row" layout-align="start center">
-        <md-radio-button ng-value="true">profit</md-radio-button>
-        <md-radio-button ng-value="false">non-profit</md-radio-button>
-    </md-radio-group>
-    <md-input-container>
-        <label> wage </label>
-        <input type="text" name="wage" ng-model="formFields.wage" aria-label="wage" required/>
-    </md-input-container>
-    <md-input-container>
-        <label> Skills Required </label>
-        <input type="text" name="wage" ng-model="formFields.wage" aria-label="wage" required />
-    </md-input-container>
-    <p>Expected Time Span</p>
-    <div layout="row">
+<div layout="column">
+    <head-toolbar md-scroll-shrink="false"></head-toolbar>
+    <form name="projectCreate">
         <md-input-container>
-            <label> Time Span Length</label>
-            <input type="text" name="timeSpanLength" ng-model="formFields.expectedTimeSpan.length" aria-label="Expected Time Span Length" required />
+            <label> Project Name </label>
+            <input type="text" name="name" ng-model="formFields.name" aria-label="project name" required/>
+            <div ng-messages="projectCreate.name.$error">
+                <div ng-message="required">This field is required.</div>
+            </div>
         </md-input-container>
-        <md-select ng-model="formFields.expectedTimeSpan.type" ng-init="formFields.expectedTimeSpan.type = c.ExpectedTimeSpanType.MONTH" aria-label="Expected Time Span Type">
-            <md-option ng-repeat="expectedTimeSpanType in expectedTimeSpanTypes" ng-value="expectedTimeSpanType">{{expectedTimeSpanType}}</md-option>
-        </md-select>
-    </div>
-    <div>
-        <h3>Participant Requirements</h3>
-        <span flex></span>
-        <md-button ng-click="addParticipantRequirement(formFields.participantRequirements)">Add Participant Requirement</md-button>
-    </div>
-    <div ng-repeat="pr in formFields.participantRequirements">
-        <div>
-            <h4>Skill Requirements</h4>
-            <span flex></span>
-            <md-button ng-click="addSkillRequirement(pr.skillRequirements)">Add Skill Requirement</md-button>
-        </div>
-        <h4>Skill Requirements</h4>
-        <div ng-repeat="sr in pr.skillRequirements" layout="row">
+        <md-input-container>
+            <label> Project Description </label>
+            <textarea name="desc" ng-model="formFields.desc" aria-label="project description" required></textarea>
+        </md-input-container>
+        <md-radio-group ng-model="formFields.isProfit" layout="row" layout-align="start center">
+            <md-radio-button ng-value="true">profit</md-radio-button>
+            <md-radio-button ng-value="false">non-profit</md-radio-button>
+        </md-radio-group>
+        <md-input-container>
+            <label> wage </label>
+            <input type="text" name="wage" ng-model="formFields.wage" aria-label="wage" required/>
+        </md-input-container>
+        <md-input-container>
+            <label> Skills Required </label>
+            <input type="text" name="wage" ng-model="formFields.wage" aria-label="wage" required />
+        </md-input-container>
+        <p>Expected Time Span</p>
+        <div layout="row">
             <md-input-container>
-                <label> Skill </label>
-                <input type="text" name="timeSpanLength" ng-model="sr.skill" aria-label="Expected Time Span Length" required />
+                <label> Time Span Length</label>
+                <input type="text" name="timeSpanLength" ng-model="formFields.expectedTimeSpan.length" aria-label="Expected Time Span Length" required />
             </md-input-container>
-            <md-checkbox ng-model="sr.isRequired" aria-label="is Required">
-                required
-            </md-checkbox>
+            <md-select ng-model="formFields.expectedTimeSpan.type" ng-init="formFields.expectedTimeSpan.type = c.ExpectedTimeSpanType.MONTH" aria-label="Expected Time Span Type">
+                <md-option ng-repeat="expectedTimeSpanType in expectedTimeSpanTypes" ng-value="expectedTimeSpanType">{{expectedTimeSpanType}}</md-option>
+            </md-select>
         </div>
-    </div>
+        <div>
+            <h3>Participant Requirements</h3>
+            <span flex></span>
+            <md-button ng-click="addParticipantRequirement(formFields.participantRequirements)">Add Participant Requirement</md-button>
+        </div>
+        <div ng-repeat="pr in formFields.participantRequirements">
+            <div>
+                <h4>Skill Requirements</h4>
+                <span flex></span>
+                <md-button ng-click="addSkillRequirement(pr.skillRequirements)">Add Skill Requirement</md-button>
+            </div>
+            <h4>Skill Requirements</h4>
+            <div ng-repeat="sr in pr.skillRequirements" layout="row">
+                <md-input-container>
+                    <label> Skill </label>
+                    <input type="text" name="timeSpanLength" ng-model="sr.skill" aria-label="Expected Time Span Length" required />
+                </md-input-container>
+                <md-checkbox ng-model="sr.isRequired" aria-label="is Required">
+                    required
+                </md-checkbox>
+            </div>
+        </div>
 
-    <md-button ng-disabled="projectCreate.$invalid" ng-click="create()">Create</md-button>
-</form>
+        <md-button ng-disabled="projectCreate.$invalid" ng-click="create()">Create</md-button>
+    </form>
+</div>
