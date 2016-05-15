@@ -5,22 +5,30 @@ angular.module('mashPotatoes').controller('SidebarLeftController', ['$scope', '$
 
     $scope.menuSections = [
         {
-            header: 'header 1',
+            header: '',
             items: [
                 {
-                    title: 'title 1',
-                    subtitle: 'subtitle 1',
-                    desc: 'desc 1',
+                    title: 'Create',
+                    subtitle: '',
+                    desc: '',
                     onClick: function() {
-                        console.log('hit title 1');
+                        $state.go('projects.create');
                     }
                 },
                 {
-                    title: 'title 2',
-                    subtitle: 'subtitle 2',
+                    title: 'Browse',
+                    subtitle: 'search for available projects',
                     desc: '',
                     onClick: function() {
-                        console.log('hit title 2');
+                        $state.go('projects.search');
+                    }
+                },
+                {
+                    title: 'My Projects',
+                    subtitle: 'Currently Developing Projects',
+                    desc: '',
+                    onClick: function() {
+                        $state.go('projects');
                     }
                 }
             ]

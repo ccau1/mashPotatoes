@@ -1,0 +1,27 @@
+<form name="projectCreate">
+    <md-input-container class="boxed">
+        <label> Project Name </label>
+        <input type="text" name="name" ng-model="formFields.name" aria-label="project name" required/>
+        <div ng-messages="projectCreate.name.$error">
+            <div ng-message="required">This field is required.</div>
+        </div>
+    </md-input-container>
+    <md-input-container class="boxed">
+        <label> Project Description </label>
+        <textarea name="desc" ng-model="formFields.desc" aria-label="project description" required></textarea>
+    </md-input-container>
+    <md-radio-group ng-model="formFields.isProfit" layout="row" layout-align="start center">
+        <md-radio-button ng-value="true">profit</md-radio-button>
+        <md-radio-button ng-value="false">non-profit</md-radio-button>
+    </md-radio-group>
+    <md-input-container class="boxed">
+        <label> wage </label>
+        <input type="text" name="wage" ng-model="formFields.wage" aria-label="wage" required/>
+    </md-input-container>
+    <md-input-container class="boxed">
+        <label> Skills Required </label>
+        <input type="text" name="wage" ng-model="formFields.wage" aria-label="wage" required />
+    </md-input-container>
+
+    <md-button ng-disabled="projectCreate.$invalid" ng-click="create()">Create</md-button>
+</form>

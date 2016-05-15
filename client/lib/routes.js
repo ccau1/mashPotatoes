@@ -24,11 +24,56 @@ angular.module("mashPotatoes").config(['$stateProvider', '$urlRouterProvider', '
                     controller: "HomeController"
                 }
             },
-            data: {pageTitle: 'Overview'},//, pageSubTitle: 'statistics & reports'},
-            resolve: lodash.assign({
+            data: {pageTitle: 'Overview'},
+            resolve: lodash.assign(baseResolve, {
 
-            }, baseResolve)
+            })
         })
+        .state('projects.create', {
+            url: "/projects/create",
+            views: {
+                'main': {
+                    templateUrl: "client/components/projects/projectCreateView.ng.html",
+                    controller: "ProjectCreateController"
+                }
+            },
+            data: {pageTitle: 'Create a Project'},
+            resolve: lodash.assign(baseResolve, {
+
+            })
+        })
+        .state('projects.search', {
+            url: "/projects/search",
+            views: {
+                'main': {
+                    templateUrl: "client/components/projects/projectSearchView.ng.html",
+                    controller: "ProjectSearchController"
+                }
+            },
+            data: {pageTitle: 'Search Available Projects'},
+            resolve: lodash.assign(baseResolve, {
+
+            })
+        })
+        .state('projects', {
+            url: "/projects",
+            views: {
+                'main': {
+                    templateUrl: "client/components/projects/projectsView.ng.html",
+                    controller: "ProjectsController"
+                }
+            },
+            data: {pageTitle: 'My Projects'},
+            resolve: lodash.assign(baseResolve, {
+
+            })
+        })
+
+
+
+
+
+
         .state('login', {
             url: "/login",
             views: {
@@ -59,4 +104,7 @@ angular.module("mashPotatoes").config(['$stateProvider', '$urlRouterProvider', '
             },
             data: {pageTitle: 'Reset Password'},//, pageSubTitle: 'statistics & reports'},
         })
+
+
+
 }]);
